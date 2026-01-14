@@ -29,12 +29,14 @@ from typing import Optional
 load_dotenv()
 
 stripe.api_key = os.getenv("STRIPE_API_KEY")
-client = openai.AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# OpenAI client will be initialized on demand
+client = None
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 supabase_url = os.getenv("SUPABASE_URL")
 supabase_key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-supabase: Client = create_client(supabase_url, supabase_key)
+# Supabase client will be initialized on demand
+supabase = None
 
 app = FastAPI(
     title="Logik Systems - Compliance Support Platform",
