@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Logik Systems EOOD - AI-gestützte EU AI Act Compliance-Unterstützung für Unternehmen">
+    <meta name="keywords" content="AI Compliance, EU AI Act, RegTech, Compliance Software">
+    <meta name="author" content="Logik Systems EOOD">
+    <title>Logik Systems - AI-Gestützte Compliance-Unterstützung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #000000;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .hero .disclaimer {
+            background-color: rgba(255,255,255,0.1);
+            border-left: 4px solid #ffffff;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .feature-card p {
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #000000;
+            background-color: #000000;
+            color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured h3 {
+            color: #ffffff;
+        }
+
+        .pricing-card.featured .price {
+            color: #ffffff;
+        }
+
+        .pricing-card.featured .features-list {
+            color: #ffffff;
+        }
+
+        .pricing-card.featured .btn-primary {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .pricing-card .price-period {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+            color: #666666;
+        }
+
+        .pricing-card .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pricing-card .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card .features-list li:before {
+            content: "✓ ";
+            font-weight: 700;
+            color: #000000;
+            margin-right: 0.5rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+        }
+
+        .how-it-works h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .step p {
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* Compliance Section */
+        .compliance {
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .compliance h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .compliance-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #000000;
+        }
+
+        .compliance-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #000000;
+        }
+
+        .compliance-content p {
+            color: #666666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .compliance-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .compliance-list li {
+            padding: 0.5rem 0;
+            color: #666666;
+        }
+
+        .compliance-list li:before {
+            content: "✓ ";
+            font-weight: 700;
+            color: #000000;
+            margin-right: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 3rem 2rem;
+            border-top: 1px solid #333333;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #ffffff;
+        }
+
+        footer .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 2rem;
+            text-align: center;
+            color: #999999;
+            font-size: 0.9rem;
+        }
+
+        footer .company-info {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .features h2,
+            .pricing h2,
+            .how-it-works h2,
+            .compliance h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Logik Systems</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Preise</a></li>
+                <li><a href="#how-it-works">Wie es funktioniert</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>EU AI Act Compliance<br>Leicht gemacht</h1>
+            <p class="subtitle">
+                AI-gestützte Compliance-Unterstützung für Unternehmen, die ihre KI-Systeme verstehen und regulieren möchten.
+            </p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('pricing')">Jetzt starten</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('features')">Mehr erfahren</button>
+            </div>
+            <div class="disclaimer">
+                <strong>⚠️ Wichtiger Hinweis:</strong> Logik Systems bietet AI-gestützte Compliance-Unterstützungssoftware. 
+                Dies ist KEINE Rechtsberatung und ersetzt nicht die Beratung durch qualifizierte Compliance-Fachleute. 
+                Alle Bewertungen müssen von Fachleuten überprüft werden.
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Unsere Funktionen</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Automatisierte Analyse</h3>
+                    <p>
+                        KI-gestützte Bewertung Ihrer Systeme gegen EU AI Act Anforderungen. 
+                        Schnelle und umfassende Compliance-Checklisten.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Risiko-Scoring</h3>
+                    <p>
+                        Detaillierte Risikoanalyse mit klaren Empfehlungen. 
+                        Verstehen Sie, wo Ihre Systeme Aufmerksamkeit benötigen.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Kontinuierliche Überwachung</h3>
+                    <p>
+                        Echtzeit-Compliance-Monitoring für Ihre KI-Systeme. 
+                        Bleiben Sie immer auf dem neuesten Stand der Anforderungen.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Datenschutz</h3>
+                    <p>
+                        GDPR-konform. Ihre Daten werden sicher in der EU gespeichert. 
+                        Keine Weitergabe an Dritte.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Professionelle Unterstützung</h3>
+                    <p>
+                        Dedizierter Support für Ihre Compliance-Fragen. 
+                        Schnelle Antworten von unserem Team.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Detaillierte Berichte</h3>
+                    <p>
+                        Umfassende Compliance-Berichte mit Empfehlungen. 
+                        Ideal für Audits und Dokumentation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Transparente Preise</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>AuditScan</h3>
+                    <div class="price">€1.250</div>
+                    <div class="price-period">Einmalige Bewertung</div>
+                    <ul class="features-list">
+                        <li>Einzelnes KI-System</li>
+                        <li>Automatisierte Checkliste</li>
+                        <li>Risiko-Scoring</li>
+                        <li>Grundbericht</li>
+                        <li>Email-Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="contactSales('AuditScan')">Jetzt buchen</button>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>GovernanceCore</h3>
+                    <div class="price">€4.800</div>
+                    <div class="price-period">Jährlich</div>
+                    <ul class="features-list">
+                        <li>Multi-System Framework</li>
+                        <li>Enterprise Governance</li>
+                        <li>Vierteljährliche Reviews</li>
+                        <li>Prioritäts-Support</li>
+                        <li>Compliance Dashboard</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="contactSales('GovernanceCore')">Jetzt buchen</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>SovereignShield</h3>
+                    <div class="price">€12.500</div>
+                    <div class="price-period">Jährlich</div>
+                    <ul class="features-list">
+                        <li>Echtzeit-Überwachung</li>
+                        <li>Kontinuierliche Bewertung</li>
+                        <li>Incident Response</li>
+                        <li>Dedizierter Analyst</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="contactSales('SovereignShield')">Jetzt buchen</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>Wie es funktioniert</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Registrieren</h3>
+                    <p>Erstellen Sie ein Konto und wählen Sie Ihren Plan.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Informationen eingeben</h3>
+                    <p>Beschreiben Sie Ihre KI-Systeme und deren Anwendungsfälle.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Analyse erhalten</h3>
+                    <p>Erhalten Sie eine detaillierte AI-gestützte Compliance-Bewertung.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Professionelle Überprüfung</h3>
+                    <p>Lassen Sie die Ergebnisse von Fachleuten überprüfen und implementieren Sie Empfehlungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="compliance" id="compliance">
+        <div class="container">
+            <h2>Compliance & Transparenz</h2>
+            <div class="compliance-content">
+                <h3>Was wir sind</h3>
+                <p>
+                    Logik Systems EOOD ist ein Technologieanbieter für Compliance-Unterstützungssoftware. 
+                    Wir helfen Unternehmen, ihre EU AI Act Compliance-Anforderungen zu verstehen.
+                </p>
+                
+                <h3>Was wir NICHT sind</h3>
+                <ul class="compliance-list">
+                    <li>Keine Anwaltskanzlei oder Rechtsberatung</li>
+                    <li>Keine behördliche Zertifizierungsstelle</li>
+                    <li>Keine Garantie für rechtliche Immunität</li>
+                    <li>Kein Ersatz für qualifizierte Compliance-Fachleute</li>
+                </ul>
+
+                <h3>Unsere Standards</h3>
+                <ul class="compliance-list">
+                    <li>GDPR-konform und datenschutzfreundlich</li>
+                    <li>Transparente Preisgestaltung ohne versteckte Gebühren</li>
+                    <li>Klare Haftungsbegrenzungen in unseren AGB</li>
+                    <li>Professionelle Haftpflichtversicherung</li>
+                    <li>Regelmäßige Sicherheitsaudits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Bereit, Ihre Compliance zu verbessern?</h2>
+            <p>Starten Sie noch heute mit einer kostenlosen Beratung.</p>
+            <button class="btn btn-primary" onclick="contactSales('consultation')">Kostenlose Beratung</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Logik Systems</h4>
+                <div class="company-info">
+                    <p><strong>Logik Systems EOOD</strong></p>
+                    <p>UIC: 208569532</p>
+                    <p>Vratsa, Bulgarien</p>
+                </div>
+            </div>
+            <div>
+                <h4>Produkt</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Preise</a></li>
+                    <li><a href="#how-it-works">Wie es funktioniert</a></li>
+                    <li><a href="/api/docs">API Dokumentation</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Unternehmen</h4>
+                <ul>
+                    <li><a href="/terms">Nutzungsbedingungen</a></li>
+                    <li><a href="/privacy">Datenschutz</a></li>
+                    <li><a href="/compliance">Compliance</a></li>
+                    <li><a href="mailto:support@logik-systems.com">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontakt</h4>
+                <ul>
+                    <li><a href="mailto:support@logik-systems.com">support@logik-systems.com</a></li>
+                    <li><a href="mailto:sales@logik-systems.com">sales@logik-systems.com</a></li>
+                    <li><a href="mailto:compliance@logik-systems.com">compliance@logik-systems.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Logik Systems EOOD. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                ⚠️ Disclaimer: Logik Systems bietet AI-gestützte Compliance-Unterstützung. 
+                Dies ist keine Rechtsberatung. Alle Bewertungen müssen von Fachleuten überprüft werden.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function contactSales(plan) {
+            const email = 'sales@logik-systems.com';
+            const subject = `Anfrage für ${plan} Plan`;
+            const body = `Hallo,\n\nIch bin interessiert an dem ${plan} Plan von Logik Systems.\n\nBitte kontaktieren Sie mich mit weiteren Informationen.\n\nBeste Grüße`;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

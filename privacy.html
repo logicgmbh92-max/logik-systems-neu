@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Logik Systems</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+
+        nav {
+            background-color: #000000;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-left: 4px solid #000000;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .last-updated {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #cccccc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Logik Systems</div>
+            <a href="/">← Zurück zur Startseite</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Datenschutzerklärung</h1>
+
+        <p>
+            <strong>Logik Systems EOOD</strong> ("wir", "uns" oder "unser") betreibt die Website logik-systems.com 
+            ("Service"). Diese Seite informiert Sie über unsere Richtlinien zur Erfassung, Verwendung und Offenlegung 
+            personenbezogener Daten, wenn Sie unseren Service nutzen.
+        </p>
+
+        <h2>1. Informationen, die wir erfassen</h2>
+
+        <h3>1.1 Informationen, die Sie uns direkt bereitstellen</h3>
+        <ul>
+            <li><strong>Kontaktinformationen:</strong> Name, E-Mail-Adresse, Telefonnummer</li>
+            <li><strong>Unternehmensinformationen:</strong> Unternehmensname, Branche, Größe</li>
+            <li><strong>Systeminformationen:</strong> Beschreibungen Ihrer KI-Systeme und deren Anwendungsfälle</li>
+            <li><strong>Zahlungsinformationen:</strong> Verarbeitet durch Stripe (wir speichern diese nicht)</li>
+        </ul>
+
+        <h3>1.2 Automatisch erfasste Informationen</h3>
+        <ul>
+            <li><strong>Nutzungsdaten:</strong> Seiten, die Sie besuchen, Zeit auf der Website, Klicks</li>
+            <li><strong>Geräteinformationen:</strong> Browsertyp, Betriebssystem, IP-Adresse</li>
+            <li><strong>Cookies:</strong> Zur Verbesserung des Benutzererlebnisses</li>
+        </ul>
+
+        <h2>2. Wie wir Ihre Informationen verwenden</h2>
+
+        <p>Wir verwenden die erfassten Informationen für:</p>
+        <ul>
+            <li>Bereitstellung und Verbesserung unseres Service</li>
+            <li>Kommunikation mit Ihnen über Ihr Konto und den Service</li>
+            <li>Verarbeitung von Zahlungen</li>
+            <li>Versand von Compliance-Berichten und Empfehlungen</li>
+            <li>Analyse von Nutzungsmustern zur Verbesserung des Service</li>
+            <li>Einhaltung gesetzlicher Anforderungen</li>
+        </ul>
+
+        <h2>3. Datenspeicherung & Sicherheit</h2>
+
+        <h3>3.1 Speicherort</h3>
+        <div class="highlight">
+            <strong>Alle Ihre Daten werden in der Europäischen Union gespeichert.</strong><br>
+            Wir verwenden Supabase, das Daten in EU-Rechenzentren speichert.
+        </div>
+
+        <h3>3.2 Sicherheitsmaßnahmen</h3>
+        <ul>
+            <li>Verschlüsselung im Ruhezustand (AES-256)</li>
+            <li>Verschlüsselte Übertragung (HTTPS/TLS)</li>
+            <li>Regelmäßige Sicherheitsaudits</li>
+            <li>Zugriffskontrolle und Authentifizierung</li>
+            <li>Regelmäßige Backups</li>
+        </ul>
+
+        <h3>3.3 Aufbewahrungsdauer</h3>
+        <ul>
+            <li>Aktive Kontodaten: Solange das Konto aktiv ist</li>
+            <li>Inaktive Konten: Bis zu 3 Jahre nach letzter Aktivität</li>
+            <li>Zahlungsdaten: Wie gesetzlich erforderlich (typischerweise 7 Jahre)</li>
+            <li>Audit-Logs: 3 Jahre für Compliance-Zwecke</li>
+        </ul>
+
+        <h2>4. Ihre Rechte unter GDPR</h2>
+
+        <p>
+            Als Bewohner der EU haben Sie die folgenden Rechte bezüglich Ihrer personenbezogenen Daten:
+        </p>
+
+        <h3>4.1 Recht auf Zugriff</h3>
+        <p>
+            Sie haben das Recht, zu erfahren, welche Daten wir über Sie speichern. 
+            Kontaktieren Sie uns unter privacy@logik-systems.com.
+        </p>
+
+        <h3>4.2 Recht auf Berichtigung</h3>
+        <p>
+            Sie können unrichtige oder unvollständige Daten korrigieren lassen.
+        </p>
+
+        <h3>4.3 Recht auf Löschung</h3>
+        <p>
+            Sie können die Löschung Ihrer Daten anfordern, vorbehaltlich gesetzlicher Aufbewahrungspflichten.
+        </p>
+
+        <h3>4.4 Recht auf Datenportabilität</h3>
+        <p>
+            Sie können Ihre Daten in einem strukturierten, gängigen Format erhalten.
+        </p>
+
+        <h3>4.5 Recht auf Widerspruch</h3>
+        <p>
+            Sie können der Verarbeitung Ihrer Daten widersprechen.
+        </p>
+
+        <h3>4.6 Recht auf Beschwerde</h3>
+        <p>
+            Sie haben das Recht, sich bei Ihrer lokalen Datenschutzbehörde zu beschweren.
+        </p>
+
+        <h2>5. Datenweitergabe</h2>
+
+        <h3>5.1 Wir teilen Ihre Daten NICHT mit</h3>
+        <ul>
+            <li>Dritten Vermarktern</li>
+            <li>Datenmaklern</li>
+            <li>Werbenetzwerken</li>
+            <li>Anderen Unternehmen zu Marketingzwecken</li>
+        </ul>
+
+        <h3>5.2 Wir teilen Ihre Daten mit</h3>
+        <ul>
+            <li><strong>Stripe:</strong> Für Zahlungsverarbeitung (siehe Stripe Datenschutz)</li>
+            <li><strong>OpenAI:</strong> Für KI-Bewertungen (anonymisiert, siehe OpenAI Datenschutz)</li>
+            <li><strong>Supabase:</strong> Für Datenspeicherung (siehe Supabase Datenschutz)</li>
+            <li><strong>Behörden:</strong> Wenn gesetzlich erforderlich</li>
+        </ul>
+
+        <h2>6. Cookies & Tracking</h2>
+
+        <h3>6.1 Cookies</h3>
+        <p>
+            Wir verwenden Cookies zur Verbesserung des Benutzererlebnisses. Sie können Cookies in Ihrem Browser deaktivieren, 
+            aber dies kann die Funktionalität beeinträchtigen.
+        </p>
+
+        <h3>6.2 Analytics</h3>
+        <p>
+            Wir können anonyme Nutzungsanalysen durchführen, um den Service zu verbessern. 
+            Diese Daten können nicht auf Sie zurückgeführt werden.
+        </p>
+
+        <h2>7. Drittanbieter-Links</h2>
+
+        <p>
+            Unser Service kann Links zu Websites Dritter enthalten. Wir sind nicht verantwortlich für deren Datenschutzrichtlinien. 
+            Bitte überprüfen Sie deren Datenschutzerklärungen.
+        </p>
+
+        <h2>8. Datenschutz für Kinder</h2>
+
+        <p>
+            Unser Service ist nicht für Personen unter 18 Jahren bestimmt. Wir erfassen bewusst keine Daten von Kindern. 
+            Wenn wir erfahren, dass wir Daten eines Kindes erfasst haben, werden wir diese sofort löschen.
+        </p>
+
+        <h2>9. Internationale Datenübertragungen</h2>
+
+        <p>
+            Ihre Daten werden in der EU gespeichert. Wenn Sie außerhalb der EU sind, verstehen Sie, dass Ihre Daten 
+            in die EU übertragen werden und EU-Datenschutzgesetzen unterliegen.
+        </p>
+
+        <h2>10. Änderungen dieser Datenschutzerklärung</h2>
+
+        <p>
+            Wir können diese Datenschutzerklärung jederzeit aktualisieren. Wesentliche Änderungen werden per E-Mail 
+            oder prominenter Benachrichtigung auf unserer Website mitgeteilt.
+        </p>
+
+        <h2>11. Kontaktieren Sie uns</h2>
+
+        <p>
+            Wenn Sie Fragen zu dieser Datenschutzerklärung oder unseren Datenschutzpraktiken haben, kontaktieren Sie uns:
+        </p>
+
+        <div class="highlight">
+            <strong>Logik Systems EOOD</strong><br>
+            Email: privacy@logik-systems.com<br>
+            UIC: 208569532<br>
+            Standort: Vratsa, Bulgarien<br>
+            Website: https://www.logik-systems.com
+        </div>
+
+        <h2>12. Datenschutzbeauftragter</h2>
+
+        <p>
+            Für Datenschutzfragen können Sie sich auch an unseren Datenschutzbeauftragten wenden:
+        </p>
+        <p>
+            Email: dpo@logik-systems.com
+        </p>
+
+        <div class="last-updated">
+            <p><strong>Zuletzt aktualisiert:</strong> Januar 2026</p>
+            <p>
+                Diese Datenschutzerklärung ist in Übereinstimmung mit der GDPR (Datenschutz-Grundverordnung) 
+                und anderen geltenden Datenschutzgesetzen verfasst.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Logik Systems EOOD. Alle Rechte vorbehalten.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            <a href="/">Startseite</a> | 
+            <a href="/terms">Nutzungsbedingungen</a> | 
+            <a href="/privacy">Datenschutz</a> | 
+            <a href="mailto:support@logik-systems.com">Support</a>
+        </p>
+    </footer>
+</body>
+</html>
